@@ -1,0 +1,19 @@
+import Usuario from "../models/Usuario"
+import { BaseRepository } from "./BaseRepository"
+
+export default class UsuarioRepository extends BaseRepository<Usuario> {
+
+    constructor() {
+        super("Usuarios", Usuario)
+    }
+
+    async buscarPorEmail(email: string): Promise<Usuario[]> {
+        const resultado = await this.buscarPorCampo('email', '==', email)
+        return resultado
+    }
+
+    async buscarPorNome(nome: string): Promise<Usuario[]> {
+        const resultado = await this.buscarPorCampo("nome", "==", nome)
+        return resultado
+    }
+}
