@@ -1,8 +1,13 @@
-import { Text } from "react-native-paper"
+import WebViewSegura from "../components/WebViewSegura"
 
 function PageIFPR() {
     return (
-        <Text>IFPR</Text>
+        <WebViewSegura
+            uri="https://www.ifpr.edu.br"
+            dominios={["ifpr.edu.br"]}
+            // JS LIGADO: site dinâmico
+            jsHabilitado={true}
+        />
     )
 }
 
